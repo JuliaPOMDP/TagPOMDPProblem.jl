@@ -1,0 +1,13 @@
+
+
+using Tag
+using POMDPGifs
+using Random
+
+include("../../src/utils.jl")
+
+rng = MersenneTwister(1)
+
+pomdp, pol, load_str = get_problem_and_policy(:tag)
+
+@show makegif(pomdp, pol; filename="out.gif", rng=rng)
