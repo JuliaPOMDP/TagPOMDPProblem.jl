@@ -1,6 +1,6 @@
 # Tag.jl 
 
-[![Build Status](https://travis-ci.org/dylan-asmar/Tag.jl.svg?branch=main)](https://travis-ci.org/dylan-asmar/Tag.jl)
+[![Build Status](https://app.travis-ci.com/dylan-asmar/Tag.jl.svg?branch=main)](https://app.travis-ci.com/github/dylan-asmar/Tag.jl)
 
 <!-- [![Build Status](https://travis-ci.org/JuliaPOMDP/RockSample.jl.svg?branch=master)](https://travis-ci.org/JuliaPOMDP/RockSample.jl)
 [![Coverage Status](https://coveralls.io/repos/github/JuliaPOMDP/RockSample.jl/badge.svg?branch=master)](https://coveralls.io/github/JuliaPOMDP/RockSample.jl?branch=master)
@@ -64,7 +64,7 @@ using Tag
 using SARSOP # load a  POMDP Solver
 using POMDPGifs # to make gifs
 
-grid = TagGrid(;bottom_grid=(12, 4), top_grid=(5, 5), top_grid_x_attach_pt=3)
+grid = TagGrid(;bottom_grid=(12, 4), top_grid=(6, 5), top_grid_x_attach_pt=3)
 pomdp = TagPOMDP(;tag_grid=grid)
 solver = SARSOPSolver(; timeout=600)
 policy = solve(solver, pomdp)
