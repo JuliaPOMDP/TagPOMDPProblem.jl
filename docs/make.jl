@@ -2,15 +2,15 @@ using Documenter
 
 push!(LOAD_PATH, "../src/")
 
-using Documenter, Tag
+using Documenter, TagPOMDPProblem
 
 makedocs(
-    modules = [Tag],
+    modules = [TagPOMDPProblem],
     format = Documenter.HTML(),
-    sitename = "Tag.jl",
+    sitename = "TagPOMDPProblem.jl",
 
 )
 
 deploydocs(
-    repo = "github.com/dylan-asmar/Tag.jl.git"
+    repo = "github.com/dylan-asmar/TagPOMDPProblem.jl.git"
 )

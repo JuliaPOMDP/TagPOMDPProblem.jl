@@ -1,4 +1,4 @@
-# Tag.jl Documentation
+# TagPOMDPProblem.jl Documentation
 
 Tag POMDP problem using [POMDPs.jl](https://github.com/JuliaPOMDP/POMDPs.jl). Original problem was presented in Pineau, Joelle et al. “Point-based value iteration: An anytime algorithm for POMDPs.” IJCAI (2003) ([online here](https://www.ijcai.org/Proceedings/03/Papers/147.pdf)).
 
