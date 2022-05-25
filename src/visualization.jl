@@ -127,7 +127,7 @@ function circ(x, y, r; kwargs...)
     return ellip(x, y, r, r; kwargs...)
 end
 function ellip(x, y, a, b; num_pts=25)
-    angles = [range(0, 2π, num_pts); 0]
+    angles = [range(0; stop=2π, length=num_pts); 0]
     xs = a .* sin.(angles) .+ x
     ys = b .* cos.(angles) .+ y
     return Shape(xs, ys)

@@ -1,4 +1,4 @@
-# TagPOMDPProblem.jl 
+# TagPOMDPProblem.jl
 
 [![Build Status](https://github.com/dylan-asmar/TagPOMDPProblem.jl/actions/workflows/BuildStatus.yml/badge.svg)](https://github.com/dylan-asmar/TagPOMDPProblem.jl/actions/workflows/BuildStatus.yml)
 
