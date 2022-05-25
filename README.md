@@ -1,4 +1,4 @@
-# Tag.jl 
+# TagPOMDPProblem.jl 
 
 [![Build Status](https://app.travis-ci.com/dylan-asmar/Tag.jl.svg?branch=main)](https://app.travis-ci.com/github/dylan-asmar/Tag.jl)
 
