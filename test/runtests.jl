@@ -3,7 +3,7 @@ using Random
 using POMDPs
 using POMDPModelTools
 using POMDPTesting
-using Tag
+using TagPOMDPProblem
 
 function test_state_indexing(pomdp::TagPOMDP, ss::Vector{TagState})
     for (ii, s) in enumerate(states(pomdp))
