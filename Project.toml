@@ -1,4 +1,4 @@
-name = "Tag"
+name = "TagPOMDPProblem"
 uuid = "8a653263-a1cc-4cf9-849f-f530f6ffc800"
 version = "0.1.0"
 
@@ -13,3 +13,6 @@ SparseArrays = "2f01184e-e22b-5df5-ae63-d93ebab69eaf"
 [compat]
 julia = "1.6"
 POMDPs = "0.9"
+BeliefUpdaters = "0.2.1"
+POMDPModelTools = "0.3.9"
+Plots = "1.23"

@@ -1,4 +1,4 @@
-module Tag
+module TagPOMDPProblem
 
 using LinearAlgebra
 using POMDPs
