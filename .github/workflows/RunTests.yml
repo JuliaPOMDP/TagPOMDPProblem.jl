@@ -17,7 +17,7 @@ jobs:
         with:
           version: '1.7'
       - name: Install dependencies
-        run: julia --project=test/ -e 'using Pkg; Pkg.instantiate()'
+        run: julia --project=test/ -e 'using Pkg; Pkg.develop(PackageSpec(path=pwd())); Pkg.instantiate()'
       - name: run tests
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
