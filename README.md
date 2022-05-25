@@ -1,9 +1,9 @@
 # TagPOMDPProblem.jl 
 
-[![Build Status](https://app.travis-ci.com/dylan-asmar/Tag.jl.svg?branch=main)](https://app.travis-ci.com/github/dylan-asmar/Tag.jl)
+[![Build Status](https://app.travis-ci.com/dylan-asmar/TagPOMDPProblem.jl.svg?branch=main)](https://app.travis-ci.com/github/dylan-asmar/TagPOMDPProblem.jl)
 
-[![](https://img.shields.io/badge/docs-stable-blue.svg)](https://dylan-asmar.github.io/Tag.jl/stable)
-[![](https://img.shields.io/badge/docs-dev-blue.svg)](https://dylan-asmar.github.io/Tag.jl/dev)
+[![](https://img.shields.io/badge/docs-stable-blue.svg)](https://dylan-asmar.github.io/TagPOMDPProblem.jl/stable)
+[![](https://img.shields.io/badge/docs-dev-blue.svg)](https://dylan-asmar.github.io/TagPOMDPProblem.jl/dev)
 
 
 The Tag [1] problem with the [POMDPs.jl](https://github.com/JuliaPOMDP/POMDPs.jl) interface. 
@@ -18,7 +18,7 @@ The Tag [1] problem with the [POMDPs.jl](https://github.com/JuliaPOMDP/POMDPs.jl
 
 ```julia
 using Pkg
-Pkg.add(url="https://github.com/dylan-asmar/Tag.jl.git")
+Pkg.add(url="https://github.com/dylan-asmar/TagPOMDPProblem.jl.git")
 ```
 
 
@@ -29,7 +29,7 @@ The goal of the agent is to tag the opponent by performing the tag action while 
 
 - **Actions**:  The agent can move in the four cardinal directions or perform the tag action. When performing the `tag` action, the robot does not move. The target moves during `tag` if the robot and target are not at the same location.  
 
-- **Transition model**: The movement of the agent is deterministic based on its selected action. The opponent moves stochastically according to a fixed policy away from the agent. The opponent moves away from the agent `move_away_probability` of the time and stays in the same cell otherwise. The implementation of the opponent’s movement policy varies slightly from the original paper allowing more movement away from the agent, thus making the scenario slightly more challenging. This implementation redistributes the probabilities of actions that result in hitting a wall to other actions that result in moving away. See the [transitions.jl](https://github.com/dylan-asmar/Tag.jl/blob/de1781541049c5ea2b6079c23341901afd9fa66c/src/transition.jl#L11) for details.
+- **Transition model**: The movement of the agent is deterministic based on its selected action. The opponent moves stochastically according to a fixed policy away from the agent. The opponent moves away from the agent `move_away_probability` of the time and stays in the same cell otherwise. The implementation of the opponent’s movement policy varies slightly from the original paper allowing more movement away from the agent, thus making the scenario slightly more challenging. This implementation redistributes the probabilities of actions that result in hitting a wall to other actions that result in moving away. See the [transitions.jl](https://github.com/dylan-asmar/TagPOMDPProblem.jl/blob/b0100ddb39b27990a70668187d6f1de8acb50f1e/src/transition.jl#L11) for details.
 
 
 - **Observation model**: The agent’s position is fully observable but the opponent’s position is unobserved unless both actors are in the same cell. The number of observations is one more than the number of grid squares (e.g. 30 observations for the default problem).
@@ -41,7 +41,7 @@ The goal of the agent is to tag the opponent by performing the tag action while 
 ### Default Problem
 ```julia
 using POMDPs
-using Tag
+using TagPOMDPProblem
 using SARSOP # load a  POMDP Solver
 using POMDPGifs # to make gifs
 
@@ -60,7 +60,7 @@ simulate(sim, pomdp, policy)
 ### Larger Grid
 ```julia
 using POMDPs
-using Tag
+using TagPOMDPProblem
 using SARSOP # load a  POMDP Solver
 using POMDPGifs # to make gifs
 
