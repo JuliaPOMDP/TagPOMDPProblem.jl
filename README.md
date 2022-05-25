@@ -2,9 +2,9 @@
 
 [![Build Status](https://app.travis-ci.com/dylan-asmar/Tag.jl.svg?branch=main)](https://app.travis-ci.com/github/dylan-asmar/Tag.jl)
 
-<!-- [![Build Status](https://travis-ci.org/JuliaPOMDP/RockSample.jl.svg?branch=master)](https://travis-ci.org/JuliaPOMDP/RockSample.jl)
-[![Coverage Status](https://coveralls.io/repos/github/JuliaPOMDP/RockSample.jl/badge.svg?branch=master)](https://coveralls.io/github/JuliaPOMDP/RockSample.jl?branch=master)
-[![codecov](https://codecov.io/gh/juliapomdp/RockSample.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/juliapomdp/RockSample.jl) -->
+[![](https://img.shields.io/badge/docs-stable-blue.svg)](https://dylan-asmar.github.io/Tag.jl/stable)
+[![](https://img.shields.io/badge/docs-dev-blue.svg)](https://dylan-asmar.github.io/Tag.jl/dev)
+
 
 The Tag [1] problem with the [POMDPs.jl](https://github.com/JuliaPOMDP/POMDPs.jl) interface. 
 
