@@ -4,6 +4,7 @@ using POMDPs
 using POMDPModelTools
 using POMDPTesting
 using TagPOMDPProblem
+using SparseArrays
 
 function test_state_indexing(pomdp::TagPOMDP, ss::Vector{TagState})
     for (ii, s) in enumerate(states(pomdp))
@@ -131,6 +132,12 @@ end
                 @test isapprox(d.probs[tx_bools]..., probs[ti]; atol=1e-10)
             end
         end
+
+        s0 = TagState((1, 1), (2, 2), true)
+        d = transition(pomdp, s0, 1)
+        @test isa(d, Deterministic{TagState})
+        sp = rand(rng, d)
+        @test isterminal(pomdp, sp)
     end
 
     @testset "observations" begin
@@ -197,6 +204,15 @@ end
         render(pomdp, (s=s0, a=2))
         b0 = initialstate(pomdp)
         render(pomdp, (s=s0, a=3, b=b0))
+        s0 = TagState((2, 2), (2, 2), false)
+        render(pomdp, (s=s0, a=4))
+
+        b_vec = zeros(length(pomdp))
+        inds = rand(1:(length(pomdp)-1), 10)
+        b_vec[inds] .= 1/10
+        b_sparse = sparsevec(b_vec)
+        render(pomdp, (b=b_sparse,))
+
     end
 
     @testset "constructor" begin
