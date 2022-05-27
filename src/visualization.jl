@@ -77,6 +77,10 @@ function plot_tag(pomdp::TagPOMDP, b::Vector, state_list::Vector{TagState};
 
     plt = plot(; legend=false, ticks=false, showaxis=false, grid=false, aspectratio=:equal)
 
+    for xi in 1:grid.bottom_grid[1]
+        plt = plot!(plt, rect(0.5, 0.5, xi, 0); linecolor=RGB(1.0, 1.0, 1.0), color=:white)
+    end
+
     # Plot the grid
     for cell_i in 1:num_cells
         color_scale = grid_t_b[cell_i] * prob_color_scale
