@@ -79,7 +79,6 @@ function plot_tag(pomdp::TagPOMDP, b::Vector, state_list::Vector{TagState};
 
     # Plot the grid
     for cell_i in 1:num_cells
-        xi, yi = pos_lin_to_cart(grid, cell_i)
         color_scale = grid_t_b[cell_i] * prob_color_scale
         if color_scale < 0.05
             color = :white
