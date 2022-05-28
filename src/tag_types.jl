@@ -15,7 +15,7 @@ struct TagState
 end
 
 """
-    TagState
+    TagGrid
 
 Grid details for the Tag POMDP.
 
