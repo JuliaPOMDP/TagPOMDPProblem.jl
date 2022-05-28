@@ -2,7 +2,8 @@
 
 [![Build Status](https://github.com/dylan-asmar/TagPOMDPProblem.jl/actions/workflows/BuildStatus.yml/badge.svg)](https://github.com/dylan-asmar/TagPOMDPProblem.jl/actions/workflows/BuildStatus.yml)
 [![codecov](https://codecov.io/gh/dylan-asmar/TagPOMDPProblem.jl/branch/main/graph/badge.svg?token=UNYWMYUBDL)](https://codecov.io/gh/dylan-asmar/TagPOMDPProblem.jl)
-<!-- [![](https://img.shields.io/badge/docs-stable-blue.svg)](https://dylan-asmar.github.io/TagPOMDPProblem.jl/stable) -->
+
+[![](https://img.shields.io/badge/docs-stable-blue.svg)](https://dylan-asmar.github.io/TagPOMDPProblem.jl/stable)
 [![](https://img.shields.io/badge/docs-dev-blue.svg)](https://dylan-asmar.github.io/TagPOMDPProblem.jl/dev)
 
 
@@ -15,10 +16,10 @@ The Tag [1] problem with the [POMDPs.jl](https://github.com/JuliaPOMDP/POMDPs.jl
 ![Tag Demo](./gifs/tag_SARSOP.gif)
 
 ## Installation
-
+Use `]` to get to the package manager to add the package. 
 ```julia
-using Pkg
-Pkg.add(url="https://github.com/dylan-asmar/TagPOMDPProblem.jl.git")
+julia> ]
+pkg> add TagPOMDPProblem
 ```
 
 
