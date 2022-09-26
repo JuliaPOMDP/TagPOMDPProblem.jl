@@ -1,8 +1,7 @@
 # TagPOMDPProblem.jl
 
-[![Build Status](https://github.com/dylan-asmar/TagPOMDPProblem.jl/actions/workflows/BuildStatus.yml/badge.svg)](https://github.com/dylan-asmar/TagPOMDPProblem.jl/actions/workflows/BuildStatus.yml)
+[![Build Status](https://github.com/dylan-asmar/TagPOMDPProblem.jl/actions/workflows/CI.yml/badge.svg)](https://github.com/dylan-asmar/TagPOMDPProblem.jl/actions/workflows/CI.yml)
 [![codecov](https://codecov.io/gh/dylan-asmar/TagPOMDPProblem.jl/branch/main/graph/badge.svg?token=UNYWMYUBDL)](https://codecov.io/gh/dylan-asmar/TagPOMDPProblem.jl)
-
 [![](https://img.shields.io/badge/docs-stable-blue.svg)](https://dylan-asmar.github.io/TagPOMDPProblem.jl/stable)
 [![](https://img.shields.io/badge/docs-dev-blue.svg)](https://dylan-asmar.github.io/TagPOMDPProblem.jl/dev)
 
