@@ -1,8 +1,7 @@
 using Test
 using Random
 using POMDPs
-using POMDPModelTools
-using POMDPTesting
+using POMDPTools
 using TagPOMDPProblem
 using SparseArrays
 

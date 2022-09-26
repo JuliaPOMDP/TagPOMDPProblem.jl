@@ -2,8 +2,7 @@ module TagPOMDPProblem
 
 using LinearAlgebra
 using POMDPs
-using POMDPModelTools
-using BeliefUpdaters
+using POMDPTools
 using Plots
 using SparseArrays
 
