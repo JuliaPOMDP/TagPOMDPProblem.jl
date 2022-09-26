@@ -1,5 +1,5 @@
 
-function POMDPModelTools.render(pomdp::TagPOMDP, step; pre_act_text::String="")
+function POMDPTools.render(pomdp::TagPOMDP, step; pre_act_text::String="")
 
     plt = nothing
     plotted_robot = false

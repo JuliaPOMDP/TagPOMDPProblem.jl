@@ -97,13 +97,14 @@ end
 POMDP type for the Tag POMDP.
 
 # Fields
-- `tag_grid::TagGrid`:
-- `tag_reward::Float64`:
-- `tag_penalty::Float64`:
-- `step_penalty::Float64`:
-- `terminal_state::TagState`:
-- `discount_factor::Float64`:
-- `move_away_probability::Float64`:
+- `tag_grid::TagGrid`
+- `tag_reward::Float64`
+- `tag_penalty::Float64`
+- `step_penalty::Float64`
+- `terminal_state::TagState`
+- `discount_factor::Float64`
+- `move_away_probability::Float64`
+- `orig_transition_fcn::Bool`
 """
 struct TagPOMDP <: POMDP{TagState, Int, Int}
     tag_grid::TagGrid
@@ -113,6 +114,7 @@ struct TagPOMDP <: POMDP{TagState, Int, Int}
     terminal_state::TagState
     discount_factor::Float64
     move_away_probability::Float64
+    orig_transition_fcn::Bool
 end
 
 """
@@ -120,13 +122,13 @@ end
 
 Returns a `TagPOMDP <: POMDP{TagState, Int, Int}`.
 Default values are from the original paper:
-
 Pineau, Joelle et al. “Point-based value iteration: An anytime algorithm for POMDPs.” IJCAI (2003).
 
 The main difference in this implementation is the use of only 1 terminal state
 and an opponent transition function that aims to keep the probability of moving away to the
 specified value if there is a valid action (versus allowing the action and thus increasing
-the probability of remaining in place).
+the probability of remaining in place). To use the transition function from the original
+implementation, pass `orig_transition_fcn = true`.
 
 # Keywords
 - `tag_grid::TagGrid`: Grid details, default = `TagGrid()`
@@ -135,6 +137,7 @@ the probability of remaining in place).
 - `step_penalty::Float64`: Reward for each movement action, default = -1.0
 - `discount_factor::Float64`: Discount factor, default = 0.95
 - `move_away_probability::Float64`: Probability associated with the opponent srategy. This probability is the chance it moves away, default = 0.8
+- `orig_transition_fcn::Bool`: Boolean to use the transition function from the original paper implementation, default = false
 """
 function TagPOMDP(;
     tag_grid::TagGrid = TagGrid(),
@@ -143,9 +146,12 @@ function TagPOMDP(;
     step_penalty::Float64 = -1.0,
     discount_factor::Float64 = 0.95,
     move_away_probability::Float64 = 0.8,
+    orig_transition_fcn::Bool = false,
 )
-    return TagPOMDP(tag_grid, tag_reward, tag_penalty, step_penalty,
-        TagState((0,0), (0,0), true), discount_factor, move_away_probability)
+    return TagPOMDP(
+        tag_grid, tag_reward, tag_penalty, step_penalty, TagState((0,0), (0,0), true),
+        discount_factor, move_away_probability, orig_transition_fcn
+    )
 end
 
 Base.length(pomdp::TagPOMDP) = length(pomdp.tag_grid.full_grid_lin_indices) + 1
