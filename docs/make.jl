@@ -14,5 +14,5 @@ makedocs(
 )
 
 deploydocs(
-    repo = "github.com/dylan-asmar/TagPOMDPProblem.jl.git"
+    repo = "github.com/JuliaPOMDP/TagPOMDPProblem.jl.git"
 )
