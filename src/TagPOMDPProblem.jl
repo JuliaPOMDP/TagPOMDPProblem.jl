@@ -1,19 +1,20 @@
 module TagPOMDPProblem
 
-using LinearAlgebra
+import LinearAlgebra: normalize
 using POMDPs
 using POMDPTools
+using MetaGraphs
+using Graphs
 using Plots
-using SparseArrays
 
-export TagPOMDP, TagGrid, TagState
+export TagPOMDP, TagState
 
 include("tag_types.jl")
 include("states.jl")
 include("actions.jl")
-include("transition.jl")
-include("observations.jl")
 include("reward.jl")
+include("observations.jl")
+include("transition.jl")
 include("visualization.jl")
 
 end # module
