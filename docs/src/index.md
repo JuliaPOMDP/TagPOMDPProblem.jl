@@ -106,7 +106,7 @@ simulate(sim, pomdp, policy)
 # Exported Functions
 ```@docs
 TagPOMDP()
-POMDPTools.render(::TagPOMDP, ::Any)
+POMDPTools.render(::TagPOMDP, ::NamedTuple)
 TagPOMDP
 TagState
 ```
