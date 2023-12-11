@@ -2,7 +2,7 @@
     pomdp = TagPOMDP()
     acts = actions(pomdp)
 
-    list_actions(pomdp)
+    TagPOMDPProblem.list_actions(pomdp)
 
     @test all(acts .== ordered_actions(pomdp))
     @test length(acts) == length(actions(pomdp))
