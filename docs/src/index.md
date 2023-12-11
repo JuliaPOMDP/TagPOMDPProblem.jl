@@ -35,7 +35,7 @@ sim = GifSimulator(;
 simulate(sim, pomdp, policy)
 ```
 
-![Tag Example](../../gifs/default.gif)
+![Tag Example](./gifs/default.gif)
 
 
 ### Larger Map
@@ -67,7 +67,7 @@ sim = GifSimulator(;
 simulate(sim, pomdp, policy)
 ```
 
-![Tag Larger Map Example](../../gifs/larger.gif)
+![Tag Larger Map Example](./gifs/larger.gif)
 
 ### Map with Obstacles
 ```julia
@@ -100,24 +100,24 @@ sim = GifSimulator(;
 simulate(sim, pomdp, policy)
 ```
 
-![Obstacle Map Example](../../gifs/boundary.gif)
+![Obstacle Map Example](./gifs/boundary.gif)
 
 
 # Exported Functions
 ```@docs
-TagPOMDP
 TagPOMDP()
-list_actions()
+POMDPTools.render(::TagPOMDP, ::Any)
+TagPOMDP
 TagState
-POMDPTools.render(TagPOMDP, Any)
 ```
 
 # Internal Functions
 ```@docs
-create_metagraph_from_map()
-map_str_from_metagraph()
-state_from_index()
-modified_transition()
-orig_transition()
-move_direction()
+TagPOMDPProblem.list_actions(::TagPOMDP)
+TagPOMDPProblem.create_metagraph_from_map(::String)
+TagPOMDPProblem.map_str_from_metagraph(::TagPOMDP)
+TagPOMDPProblem.state_from_index(::TagPOMDP, ::Int)
+TagPOMDPProblem.modified_transition(::TagPOMDP, ::TagState, ::Int)
+TagPOMDPProblem.orig_transition(::TagPOMDP, ::TagState, ::Int)
+TagPOMDPProblem.move_direction(::TagPOMDP, ::Int, ::Int)
 ```

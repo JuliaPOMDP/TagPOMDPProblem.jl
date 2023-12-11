@@ -10,7 +10,7 @@ respective positions. If the step contains an action, the action will be plotted
 bottom center of the plot. `pre_act_text` can be used to add text before the action text.
 
 - `pomdp::TagPOMDP`: The TagPOMDP to render
-- `step``: Step step to render as a Named Tuple with fields `:b`, `:s`, and `:a`
+- `step`: Step step to render as a Named Tuple with fields `b`, `s`, and `a`
 - `pre_act_text::String`: Text to add before the action text
 """
 function POMDPTools.render(pomdp::TagPOMDP, step; pre_act_text::String="")

@@ -49,7 +49,7 @@ sim = GifSimulator(;
 simulate(sim, pomdp, policy)
 ```
 
-![Tag Example](./gifs/default.gif)
+![Tag Example](./docs/src/gifs/default.gif)
 
 
 ### Larger Map
@@ -81,7 +81,7 @@ sim = GifSimulator(;
 simulate(sim, pomdp, policy)
 ```
 
-![Tag Larger Map Example](./gifs/larger.gif)
+![Tag Larger Map Example](./docs/src/gifs/larger.gif)
 
 ### Map with Obstacles
 ```julia
@@ -114,4 +114,4 @@ sim = GifSimulator(;
 simulate(sim, pomdp, policy)
 ```
 
-![Obstacle Map Example](./gifs/boundary.gif)
+![Obstacle Map Example](./docs/src/gifs/boundary.gif)

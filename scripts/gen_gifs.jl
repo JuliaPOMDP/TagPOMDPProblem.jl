@@ -18,7 +18,7 @@ sim = GifSimulator(;
     rng=Random.MersenneTwister(1)
 )
 simulate(sim, pomdp, policy)
-mv("default.gif", "gifs/default.gif")
+mv("default.gif", "docs/src/gifs/default.gif")
 
 map_str = """
 xxooooooxxxxxxx
@@ -41,7 +41,7 @@ sim = GifSimulator(;
     rng=Random.MersenneTwister(1)
 )
 simulate(sim, pomdp, policy)
-mv("larger.gif", "gifs/larger.gif")
+mv("larger.gif", "docs/src/gifs/larger.gif")
 
 map_str = """
 xxxxxxxxxx
@@ -65,7 +65,7 @@ sim = GifSimulator(;
     rng=Random.MersenneTwister(1)
 )
 simulate(sim, pomdp, policy)
-mv("boundary.gif", "gifs/boundary.gif")
+mv("boundary.gif", "docs/src/gifs/boundary.gif")
 
 Pkg.rm("SARSOP")
 Pkg.rm("POMDPGifs")

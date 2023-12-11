@@ -7,7 +7,7 @@ using MetaGraphs
 using Graphs
 using Plots
 
-export TagPOMDP, TagState, list_actions
+export TagPOMDP, TagState
 
 include("tag_types.jl")
 include("states.jl")
