@@ -1,6 +1,6 @@
 
 """
-    render(pomdp::TagPOMDP, step; pre_act_text::String="")
+    render(pomdp::TagPOMDP, step::NamedTuple; pre_act_text::String="")
 
 Render a TagPOMDP step as a plot. If the step contains a belief, the belief will be plotted
 using a color gradient of green for the belief of the target position and belief over the
@@ -10,10 +10,10 @@ respective positions. If the step contains an action, the action will be plotted
 bottom center of the plot. `pre_act_text` can be used to add text before the action text.
 
 - `pomdp::TagPOMDP`: The TagPOMDP to render
-- `step`: Step step to render as a Named Tuple with fields `b`, `s`, and `a`
+- `step::NamedTuple`: Step step to render with fields `b`, `s`, and `a`
 - `pre_act_text::String`: Text to add before the action text
 """
-function POMDPTools.render(pomdp::TagPOMDP, step; pre_act_text::String="")
+function POMDPTools.render(pomdp::TagPOMDP, step::NamedTuple; pre_act_text::String="")
     plt = nothing
     plotted_robot = false
 
@@ -50,23 +50,18 @@ function POMDPTools.render(pomdp::TagPOMDP, step; pre_act_text::String="")
     end
 
     return plt
-
 end
 
 function plot_tag(pomdp::TagPOMDP)
-    state_list = [sᵢ for sᵢ in pomdp]
-    b = zeros(length(pomdp) - 1)
-    return plot_tag(pomdp, b, state_list[1:end-1])
+    b = zeros(length(pomdp))
+    return plot_tag(pomdp, b, ordered_states(pomdp))
 end
 function plot_tag(pomdp::TagPOMDP, b::Vector{Float64})
-    state_list = [sᵢ for sᵢ in pomdp]
-    if length(b) == length(state_list)
-        return plot_tag(pomdp, b[1:end-1], state_list[1:end-1])
-    end
-    error("Belief must be the same length as the state list unless passing a state_list")
+    @assert length(b) == length(pomdp) "Belief must be the same length as the state list"
+    return plot_tag(pomdp, b, ordered_states(pomdp))
 end
 function plot_tag(pomdp::TagPOMDP, b::DiscreteBelief)
-    return plot_tag(pomdp, b.b[1:end-1], b.state_list[1:end-1])
+    return plot_tag(pomdp, b.b, b.state_list)
 end
 function plot_tag(pomdp::TagPOMDP, b::SparseCat)
     return plot_tag(pomdp, b.probs, b.vals)
@@ -90,6 +85,9 @@ function plot_tag(pomdp::TagPOMDP, b::Vector, state_list::Vector{TagState};
     grid_t_b = zeros(num_cells)
     grid_r_b = zeros(num_cells)
     for (ii, sᵢ) in enumerate(state_list)
+        if isterminal(pomdp, sᵢ)
+            continue
+        end
         grid_t_b[sᵢ.t_pos] += b[ii]
         grid_r_b[sᵢ.r_pos] += b[ii]
     end

@@ -5,7 +5,7 @@ Transition function for the TagPOMDP.
 """
 function POMDPs.transition(pomdp::TagPOMDP, s::TagState, a::Int)
     if isterminal(pomdp, s)
-        return Deterministic(pomdp.terminal_state)
+        return Deterministic(TagState(0, 0))
     end
 
     if pomdp.transition_option == :orig
@@ -122,18 +122,17 @@ function orig_transition(pomdp::TagPOMDP, s::TagState, a::Int)
     east_move_away = robot_map_coord[2] <= target_map_coord[2]
     west_move_away = robot_map_coord[2] >= target_map_coord[2]
 
+    ns_probs = 0.0
+    ew_probs = 0.0
+
     ns_away = north_move_away + south_move_away
     ew_away = east_move_away + west_move_away
 
-    if ns_away == 0
-        ns_probs = 0.0
-    else
+    if ns_away > 0
         ns_probs = pomdp.move_away_probability / 2 / ns_away
     end
 
-    if ew_away == 0
-        ew_probs = 0.0
-    else
+    if ew_away > 0
         ew_probs = pomdp.move_away_probability / 2 / ew_away
     end
 

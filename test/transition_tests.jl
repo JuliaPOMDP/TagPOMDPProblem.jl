@@ -9,8 +9,20 @@
     ooo
     """
 
+    try
+        pomdp = TagPOMDP(; transition_option=:invalid)
+        td = transition(pomdp, TagState(1, 2), 1)
+        @test false
+    catch
+        @test true
+    end
+
     # Test transition function with the default transition option (modified)
     pomdp = TagPOMDP(; map_str=map_str, transition_option=:modified)
+
+    td = transition(pomdp, TagState(0, 0), 1)
+    @test isa(td, Deterministic{TagState})
+    @test isterminal(pomdp, td.val)
 
     td = transition(pomdp, TagState(5, 5), 1)
     @test all([s.r_pos == 2 for s in td.vals])
