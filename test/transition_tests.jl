@@ -64,6 +64,11 @@
         end
     end
 
+    td = transition(pomdp, TagState(7, 3), 1)
+    @test isa(td, Deterministic{TagState})
+    @test td.val.r_pos == 4
+    @test td.val.t_pos == 3
+
     # Test original paper transition function
     pomdp = TagPOMDP(; map_str=map_str, transition_option=:orig)
 
