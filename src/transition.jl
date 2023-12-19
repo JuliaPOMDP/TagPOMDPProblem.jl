@@ -108,8 +108,8 @@ function orig_transition(pomdp::TagPOMDP, s::TagState, a::Int)
     t_move_dirs = [get_prop(pomdp.mg, s.t_pos, t_pos′, :action) for t_pos′ in t_move_pos_options]
 
     # Isolate ns and ew moves
-    ns_moves = t_move_pos_options[(t_move_dirs .== :north) .|| (t_move_dirs .== :south)]
-    ew_moves = t_move_pos_options[(t_move_dirs .== :east) .|| (t_move_dirs .== :west)]
+    ns_moves = t_move_pos_options[(t_move_dirs .== :north) .| (t_move_dirs .== :south)]
+    ew_moves = t_move_pos_options[(t_move_dirs .== :east) .| (t_move_dirs .== :west)]
 
 
     robot_map_coord = get_prop(pomdp.mg, :node_pos_mapping)[s.r_pos]
