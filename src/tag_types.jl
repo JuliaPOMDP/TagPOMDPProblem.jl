@@ -223,7 +223,7 @@ POMDPs.isterminal(pomdp::TagPOMDP, s::TagState) = s.r_pos == 0 && s.t_pos == 0
 POMDPs.discount(pomdp::TagPOMDP) = pomdp.discount_factor
 
 function Base.show(io::IO, pomdp::TagPOMDP)
-    println("TagPOMDPProblem")
+    println(io, "TagPOMDPProblem")
     for name in fieldnames(typeof(pomdp))
         if name == :mg
             print(io, "\t", name, ": ")
