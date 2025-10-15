@@ -1,6 +1,6 @@
 name = "TagPOMDPProblem"
 uuid = "8a653263-a1cc-4cf9-849f-f530f6ffc800"
-version = "0.2.2"
+version = "0.2.3"
 
 [deps]
 Graphs = "86223c79-3864-5bf0-83f7-82e725a168b6"
@@ -13,7 +13,7 @@ Plots = "91a5bcdd-55d7-5caf-9e0b-520d859cae80"
 [compat]
 Graphs = "1.9"
 LinearAlgebra = "1.6"
-MetaGraphs = "0.7"
+MetaGraphs = "0.8"
 POMDPTools = "0.1, 1"
 POMDPs = "0.9, 1"
 Plots = "1.23"
